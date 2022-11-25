@@ -10,8 +10,15 @@ const reservationSchema = new Schema({
   grpSize: {
     type: Number,
     required: true,
-    default: 1,
+  },
+  bookingTime: {
+    type: Date,
+    default: Date.now(),
+  },
+  waitlistId: {
+    type: Schema.Types.ObjectId,
+    ref: "Waitlist",
   },
 });
 
-module.exports = mongoose.model("Reservsation", reservationSchema);
+module.exports = mongoose.model("Reservation", reservationSchema);

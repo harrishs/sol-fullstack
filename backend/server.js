@@ -4,9 +4,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const reservationRoutes = require("./routes/reservation");
-const db = require("./util/database");
-
-db.connect();
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -17,7 +14,7 @@ app.get("/", (req, res, next) => {
   res.send("Hello");
 });
 
-app.use("/reservation", reservationRoutes);
+app.use("/reservations", reservationRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI, () => {
