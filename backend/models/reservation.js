@@ -18,6 +18,7 @@ const reservationSchema = new Schema({
   waitlistId: {
     type: Schema.Types.ObjectId,
     ref: "Waitlist",
+    required: true,
   },
 });
 

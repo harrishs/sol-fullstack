@@ -4,16 +4,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const reservationRoutes = require("./routes/reservation");
+const waitlistRoutes = require("./routes/waitlist");
 
 const app = express();
 const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 
-app.get("/", (req, res, next) => {
-  res.send("Hello");
-});
-
+app.use("/", waitlistRoutes);
 app.use("/reservations", reservationRoutes);
 
 mongoose
