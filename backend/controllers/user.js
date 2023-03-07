@@ -56,7 +56,7 @@ exports.postLogin = (req, res, next) => {
 				process.env.SECRET,
 				{ expiresIn: "1h" }
 			);
-			res.status(200).json({ waitlist: loadedUser, token });
+			res.status(200).json({ user: loadedUser, token });
 		})
 		.catch((err) => res.status(401).json({ err }));
 };
