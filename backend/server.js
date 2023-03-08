@@ -12,7 +12,7 @@ const port = process.env.PORT || 8080;
 app.use(bodyParser.json());
 
 app.use("/", userRoutes);
-app.use("/reservations", certRoutes);
+app.use("/certs", certRoutes);
 
 mongoose
 	.connect(process.env.MONGO_URI, () => {

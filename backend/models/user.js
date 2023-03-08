@@ -19,11 +19,15 @@ const userSchema = new Schema({
 		type: String,
 		default: "Offline",
 	},
-	reservations: [
+	wallet: {
+		type: String,
+		required: true,
+	},
+	certs: [
 		{
-			reservationId: {
+			certId: {
 				type: Schema.Types.ObjectId,
-				ref: "Reservation",
+				ref: "Cert",
 				required: true,
 			},
 		},
