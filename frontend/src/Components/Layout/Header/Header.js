@@ -4,7 +4,7 @@ require("@solana/wallet-adapter-react-ui/styles.css");
 const Header = () => {
 	return (
 		<header>
-			<div>Hello</div>
+			<div>Header Left</div>
 			<div>
 				<WalletMultiButton />
 			</div>

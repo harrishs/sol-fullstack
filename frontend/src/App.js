@@ -1,10 +1,13 @@
 import Layout from "./Components/Layout/Layout";
 import WalletContextProvider from "./contexts/WalletContextProvider";
+import Auth from "./Components/Authentication/Auth";
 
 function App() {
 	return (
 		<WalletContextProvider>
-			<Layout />
+			<Layout>
+				<Auth />
+			</Layout>
 		</WalletContextProvider>
 	);
 }

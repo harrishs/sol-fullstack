@@ -1,1 +1,1 @@
-# waitless-fullstack
+# sol-fullstack
