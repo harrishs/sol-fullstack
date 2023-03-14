@@ -8,6 +8,7 @@ exports.postRegister = (req, res, next) => {
 	const name = req.body.name;
 	const email = req.body.email;
 	const password = req.body.password;
+	const wallet = req.body.wallet;
 	bcrypt
 		.hash(password, salt)
 		.then((hashedPw) => {
@@ -15,6 +16,7 @@ exports.postRegister = (req, res, next) => {
 				name,
 				email,
 				password: hashedPw,
+				wallet,
 			});
 			return user.save();
 		})

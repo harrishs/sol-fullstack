@@ -28,7 +28,7 @@ const Auth = (props) => {
 	};
 
 	const onSignUp = (name, email, password, wallet) => {
-		console.log("in signup");
+		console.log(name, email, password, wallet);
 		fetch(api.userRoutes + "register", {
 			method: "POST",
 			headers: {
@@ -41,13 +41,14 @@ const Auth = (props) => {
 				wallet,
 			}),
 		})
-			.then((res) => console.log(res))
+			.then((res) => res.json())
+			.then((data) => console.log(data))
 			.catch((err) => console.log(err));
 	};
 
 	const handleSubmit = (event) => {
-		onSignUp(name, email, password, isWallet);
 		event.preventDefault();
+		onSignUp(name, email, password, isWallet.publicKey.toBase58());
 	};
 
 	const signUp = (
@@ -72,7 +73,7 @@ const Auth = (props) => {
 					onChange={(e) => onChange(e, "password")}
 				/>
 			</label>
-			<input type="button" value="Submit" />
+			<button type="submit">Submit</button>
 		</form>
 	);
 
