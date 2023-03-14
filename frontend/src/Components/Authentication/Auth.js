@@ -52,43 +52,57 @@ const Auth = (props) => {
 	};
 
 	const signUp = (
-		<form onSubmit={handleSubmit}>
-			<label>
-				Name:
-				<input type="text" name="name" onChange={(e) => onChange(e, "name")} />
-			</label>
-			<label>
-				Email:
-				<input
-					type="text"
-					name="email"
-					onChange={(e) => onChange(e, "email")}
-				/>
-			</label>
-			<label>
-				Password:
-				<input
-					type="password"
-					name="password"
-					onChange={(e) => onChange(e, "password")}
-				/>
-			</label>
-			<button type="submit">Submit</button>
-		</form>
+		<div>
+			<button onClick={() => setIsUser(true)}>
+				Already Registered? Click Here
+			</button>
+			<form onSubmit={handleSubmit}>
+				<label>
+					Name:
+					<input
+						type="text"
+						name="name"
+						onChange={(e) => onChange(e, "name")}
+					/>
+				</label>
+				<label>
+					Email:
+					<input
+						type="text"
+						name="email"
+						onChange={(e) => onChange(e, "email")}
+					/>
+				</label>
+				<label>
+					Password:
+					<input
+						type="password"
+						name="password"
+						onChange={(e) => onChange(e, "password")}
+					/>
+				</label>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
 	);
 
 	const login = (
-		<form>
-			<label>
-				Email:
-				<input type="text" name="email" />
-			</label>
-			<label>
-				Password:
-				<input type="password" name="password" />
-			</label>
-			<input type="button" value="Submit" />
-		</form>
+		<div>
+			<button onClick={() => setIsUser(false)}>
+				Not Registered? Click Here
+			</button>
+			<form>
+				<label>
+					Email:
+					<input type="text" name="email" />
+				</label>
+				<label>
+					Password:
+					<input type="password" name="password" />
+				</label>
+				<input type="button" value="Submit" />
+			</form>
+		</div>
 	);
 
 	return (
